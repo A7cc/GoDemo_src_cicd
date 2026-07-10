@@ -16,17 +16,6 @@ func execHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Fprintf(w, "%s", result)
 }
-
-func search(w http.ResponseWriter, r *http.Request) {
-
-	id := r.URL.Query().Get("id")
-
-	query := "select * from users where id=" + id
-
-	db.Query(query)
-
-}
-
 func main() {
 
 	var password = "123456"
