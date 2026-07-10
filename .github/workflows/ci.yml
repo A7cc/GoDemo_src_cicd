@@ -133,12 +133,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Docker Build
         run:
-          docker build \
-          -t demo-cicd:latest .
+          docker build -t demo-cicd:latest .
       - name: Save Docker Image
         run:
-          docker save demo-cicd:latest \
-          -o demo-cicd.tar
+          docker save demo-cicd:latest -o demo-cicd.tar
 
   ################################
   # 7. Docker Image Security Scan
@@ -153,8 +151,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Image
         run:
-          docker build \
-          -t demo-cicd:latest .
+          docker build -t demo-cicd:latest .
       - name: Trivy Image Scan
         uses: aquasecurity/trivy-action@master
         with:
