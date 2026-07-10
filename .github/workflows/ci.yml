@@ -88,6 +88,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: go
+          queries: security-extended
 
       - name: Build
         run: |
@@ -126,7 +127,7 @@ jobs:
           scan-type: fs
           scan-ref: .
           severity: HIGH,CRITICAL
-          exit-code: 0
+          exit-code: 1
 
   ################################
   # 6. Docker Build
@@ -165,5 +166,5 @@ jobs:
         with:
           image-ref: demo-cicd:latest
           severity: HIGH,CRITICAL
-          exit-code: 0
+          exit-code: 1
           ignore-unfixed: true
