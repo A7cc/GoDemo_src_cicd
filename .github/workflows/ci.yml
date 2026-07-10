@@ -88,7 +88,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: go
-          queries: security-extended
+          queries: security-and-quality
 
       - name: Build
         run: |
